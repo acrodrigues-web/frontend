@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão da Cozinha</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .cabecalho {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* --- ESTILOS DO CARROSSEL --- */
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            gap: 10px;
+            padding: 10px 0;
+            margin: 20px 0;
+            scrollbar-width: none; /* Esconde barra no Firefox */
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none; /* Esconde barra no Chrome/Safari */
+        }
+
+        .carousel-item {
+            flex: 0 0 100%; /* Cada imagem ocupa 100% da largura */
+            scroll-snap-align: center;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* --------------------------- */
+
+        .grid-tarefas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            align-items: start;
+        }
+
+        .coluna {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            text-align: center;
+            height: 100%;
+        }
+
+        .coluna h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.2rem;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-tarefas {
+                grid-template-columns: 1fr;
+            }
+            .carousel-item {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <h1>Bem-vindo ao sistema de gestão da cozinha!</h1>
+
+        <section class="carousel">
+            <div class="carousel-item">
+                <img src="IMG_20250729_213721.jpg" alt="Cozinha organizada">
+            </div>
+            <div class="carousel-item">
+                <img src="IMG_20250824_151900.jpg" alt="Ingredientes frescos">
+            </div>
+            <div class="carousel-item">
+                <img src="https://github.com/acrodrigues-web/frontend/blob/746709da429d1e3187237bcc37c8f4b8ce53a634/IMG_20250824_151900.jpg" alt="Preparação de receitas">
+            </div>
+        </section>
+
+        <h3>Esta página servirá para acompanhar as tarefas da cozinha de forma eficiente.</h3>
+    </header>
+
+    <main class="grid-tarefas">        
+        <div class="coluna">
+            <h3>Quem cozinha?</h3>
+            <p>Clique para definir os responsáveis.</p>
+            <button>Cozinherx</button>
+          </div>
+          <div class="coluna">
+            <h3>Lista de compras</h3>
+            <p>Itens faltantes no estoque.</p>
+            <button>Lista</button>
+          </div>
+          <div class="coluna">
+            <h3>Receitas</h3>
+            <p>Explore o catálogo de pratos.</p>
+            <button>Receitas</button>
+        </div>
+    </main>
+
+</body>
